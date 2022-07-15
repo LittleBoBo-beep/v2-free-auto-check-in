@@ -1,0 +1,29 @@
+name: Node.js CI
+
+on:
+  schedule:
+  - cron: '30 4 * * *' # 该时间为UTC时间，比北京时间晚8个小时，每天早上5点半自动执行
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }} CheckIn Accont
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+      env:
+        COOKIE: ${{ secrets.COOKIE }}
+        USER: ${{ secrets.USER }}
+        PASS: ${{ secrets.PASS }}
+        TO: ${{ secrets.TO }}
+    - run: npm ci && node index.js "${COOKIE}" "${USER}" "${PASS}" "${TO}"
