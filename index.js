@@ -8,10 +8,10 @@ const v2freeData = {
 	error: '失败'
 }
 let [Cookie, user, pass, to] = process.argv.slice(2);
-Cookie = '_ga=GA1.1.1018183825.1653209296; _gcl_au=1.1.1173335930.1653209332; __stripe_mid=214e26ee-26fd-4646-a85a-c934b67e8e77b29582; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_2905f061-e300-4db3-b38c-47a3b48db705; crisp-client%2Fsocket%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=0; uid=51057; email=qq845734834%40163.com; key=af0400cbfb226e95e6bd3a8c1229993094549207b17b5; ip=31cc8ed43579e59453a739554b6dae18; expire_in=1660463221; _ga_NC10VPE6SR=GS1.1.1657871037.66.1.1657871227.0'
-user = 'chen17735486692@163.com'
-pass = 'XVQMRVIHORJEFTFY'
-to = '845734834@qq.com'
+// Cookie = '_ga=GA1.1.1018183825.1653209296; _gcl_au=1.1.1173335930.1653209332; __stripe_mid=214e26ee-26fd-4646-a85a-c934b67e8e77b29582; crisp-client%2Fsession%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=session_2905f061-e300-4db3-b38c-47a3b48db705; crisp-client%2Fsocket%2Fa47ae3dd-53d8-4b15-afae-fb4577f7bcd0=0; uid=51057; email=qq845734834%40163.com; key=af0400cbfb226e95e6bd3a8c1229993094549207b17b5; ip=31cc8ed43579e59453a739554b6dae18; expire_in=1660463221; _ga_NC10VPE6SR=GS1.1.1657871037.66.1.1657871227.0'
+// user = 'chen17735486692@163.com'
+// pass = 'XVQMRVIHORJEFTFY'
+// to = '845734834@qq.com'
 process.env.user = user;
 process.env.pass = pass;
 const headers = {
