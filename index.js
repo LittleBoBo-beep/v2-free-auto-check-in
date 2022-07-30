@@ -76,7 +76,7 @@ async function getMsgStatus({traffic = '', msg, trafficInfo: { lastUsedTraffic, 
 	}
 	if (traffic) {
 		params.html += `
-			<p  style="text-indent: 2em">剩余${traffic}</p>
+			<p  style="text-indent: 2em">全部获得${traffic}</p>
 			<p  style="text-indent: 2em">已使用${lastUsedTraffic}</p>
 			<p  style="text-indent: 2em">今日使用${todayUsedTraffic}</p>
 			<p  style="text-indent: 2em">签到之前剩余${unUsedTraffic}</p>
@@ -88,6 +88,7 @@ async function getMsgStatus({traffic = '', msg, trafficInfo: { lastUsedTraffic, 
 (async function () {
 	const repData = await checkIn()
 	try {
+		console.log('接口返回：', repData)
 		await getMsgStatus(repData);
 		console.info(v2freeData.success)
 	} catch (e) {
